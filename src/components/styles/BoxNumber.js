@@ -1,17 +1,11 @@
 import styled from "@emotion/styled";
 
-const BoxNumber = styled.div`
-	position: relative;
-	top: 0;
-	left: 0;
-	height: 20px;
-	width: 20px;
+const BoxNumber = styled.div `
 	border-right: 1px solid #ccc;
-	border-bottom: 1px solid #ccc;
 	display: grid;
-	justify-content: center;
-	align-items: center;
-	border-radius: 2px;
+	/* justify-content: center;
+	align-items: center; */
+	font-size: 10px;
 `;
 
 export default BoxNumber;
