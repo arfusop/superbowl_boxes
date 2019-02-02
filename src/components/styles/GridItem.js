@@ -1,11 +1,9 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-const GridItem = styled.div `
-  display: grid;
-  /* padding: 20px; */
-  border: 1px solid #cccccc;
-  /* justify-content: center;
-  align-items: center; */
+const GridItem = styled.div`
+	display: grid;
+	border: 1px solid #cccccc;
+	height: 50px;
 `;
 
 export default GridItem;
