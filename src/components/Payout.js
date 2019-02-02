@@ -15,7 +15,7 @@ export default class Payout extends Component {
   render() {
     const {q1, q2, q3, q4, total} = this.state;
     return (
-      <Card>
+      <Card gtr="40px 1fr" border="1px solid #cccccc">
         <CardHeader>Payouts</CardHeader>
         <CardBody>
           <div>1st Quarter: ${q1}</div>

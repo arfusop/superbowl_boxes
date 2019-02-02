@@ -1,9 +1,9 @@
-export default function getGameData() {
-  fetch('http://www.nfl.com/liveupdate/scores/scores.json')
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(JSON.stringify(myJson));
-    });
+export const getGameData = () => {
+  fetch('http://www.nfl.com/liveupdate/scores/scores.json').then((response) => {
+    return response.json();
+  }).then((myJson) => {
+    const data = JSON.stringify(myJson);
+    console.log(data)
+    return data;
+  }).catch(err => console.log(err));
 }

@@ -2,19 +2,236 @@ import React, {Component} from 'react';
 import {ThemeProvider} from 'emotion-theming';
 import Header from './components/Header';
 import GridContainer from './components/GridContainer';
+import DataContainer from './components/DataContainer';
 import Card from './components/styles/Card';
 import Payout from './components/Payout';
-import getGameData from './api';
+// import {getGameData} from './api';
 
 class App extends Component {
+  state = {
+    gameData: {},
+    boxes: [
+      {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }, {
+        initials: ""
+      }
+    ]
+  }
+
   componentDidMount() {
-    const data = getGameData();
-    console.log(data);
+    // const data = getGameData();
+    let data;
+    fetch('http://www.nfl.com/liveupdate/scores/scores.json').then((response) => {
+      return response.json();
+    }).then((myJson) => {
+      data = myJson;
+      this.setState({gameData: data})
+      return data;
+    }).catch(err => console.log(err));
   }
   render() {
     const theme = {
       border: '1px solid #ccc'
     };
+
+    const {gameData, boxes} = this.state;
 
     return (
       <ThemeProvider theme={theme}>
@@ -31,11 +248,18 @@ class App extends Component {
               display: 'grid',
               gridGap: '20px'
             }}>
-              <Payout/>
-              <Card>Data Entry</Card>
-              <Card>Submit and assign #'s</Card>
+              <div
+                style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gridGap: 10
+              }}>
+                <Payout/>
+                <Card border="1px solid #cccccc">Submit and assign #'s</Card>
+              </div>
+              <DataContainer/>
             </div>
-            <GridContainer/>
+            <GridContainer boxes={boxes} gameData={gameData}/>
           </div>
         </div>
       </ThemeProvider>

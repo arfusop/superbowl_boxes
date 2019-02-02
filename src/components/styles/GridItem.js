@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 const GridItem = styled.div `
 	display: grid;
-	border: 1px solid #cccccc;
+	border: ${props => props.border};
 	height: 50px;
 `;
 
