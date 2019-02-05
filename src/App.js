@@ -226,6 +226,11 @@ class App extends Component {
       return data;
     }).catch(err => console.log(err));
   }
+
+  handleDataInput = data => {
+    console.log(data);
+  }
+
   render() {
     const theme = {
       border: '1px solid #ccc'
@@ -257,7 +262,7 @@ class App extends Component {
                 <Payout/>
                 <Card border="1px solid #cccccc">Submit and assign #'s</Card>
               </div>
-              <DataContainer/>
+              <DataContainer handleDataInput={this.handleDataInput}/>
             </div>
             <GridContainer boxes={boxes} gameData={gameData}/>
           </div>
