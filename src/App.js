@@ -228,7 +228,11 @@ class App extends Component {
   }
 
   handleDataInput = data => {
-    console.log(data);
+    const {boxes} = this.state;
+    let newBoxes = boxes;
+    const index = data.box - 1; // -1 to reset the box number to the index of the array
+    newBoxes[index].initials = data.initials;
+    this.setState({boxes: newBoxes});
   }
 
   render() {
@@ -256,11 +260,11 @@ class App extends Component {
               <div
                 style={{
                 display: 'grid',
-                gridTemplateColumns: '1fr 1fr',
+                gridTemplateColumns: '1fr',
                 gridGap: 10
               }}>
                 <Payout/>
-                <Card border="1px solid #cccccc">Submit and assign #'s</Card>
+
               </div>
               <DataContainer handleDataInput={this.handleDataInput}/>
             </div>
@@ -271,5 +275,7 @@ class App extends Component {
     );
   }
 }
+
+// <Card border="1px solid #cccccc">Submit and assign #'s</Card>
 
 export default App;

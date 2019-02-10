@@ -24,24 +24,28 @@ export default class DataContainer extends Component {
     return (
       <Card gtr="40px 1fr" border="1px solid #cccccc">
         <CardHeader>Assign Boxes:</CardHeader>
-        <CardBody>
-          <label htmlFor="boxNumbers">
-            Box Number:
+        <CardBody gridgap="10px">
+          <div
+            style={{
+            display: 'grid',
+            gridTemplateColumns: '1fr 1fr',
+            gridGap: '10px'
+          }}>
             <input
               id="boxNumbers"
+              placeholder="Box #"
               type="number"
-              value={box}
+              defaultValue={box}
               onChange={e => this.handleChange(e, 'box')}/>
-          </label>
-          <label htmlFor="initials">
-            Initials:
             <input
               id="initials"
+              placeholder="Initials"
               type="text"
-              value={initials}
+              defaultValue={initials}
               onChange={e => this.handleChange(e, 'initials')}/>
-          </label>
-          <button onClick={() => handleDataInput()}>Submit</button>
+
+          </div>
+          <button onClick={() => handleDataInput({box, initials})}>Submit</button>
         </CardBody>
       </Card>
     )

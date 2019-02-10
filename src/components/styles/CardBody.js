@@ -6,6 +6,7 @@ const CardBody = styled.div `
   padding: 10px;
   border-bottom: 1px solid #cccccc;
   justify-content: center;
+  grid-gap: ${props => props.gridgap};
 `;
 
 export default CardBody;

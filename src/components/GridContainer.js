@@ -9,7 +9,6 @@ export default class GridContainer extends Component {
 				const {gameData, boxes} = this.props;
 				let pats = 'New England Patriots';
 				pats = pats.replace(/ /g, '');
-				console.log(pats)
 				let split = pats.split('');
 				return (
 						<div
