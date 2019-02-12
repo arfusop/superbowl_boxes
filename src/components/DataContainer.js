@@ -18,35 +18,44 @@ export default class DataContainer extends Component {
   }
 
   render() {
-    const {handleDataInput} = this.props;
+    const {filledBoxes, handleDataInput} = this.props;
     const {box, initials} = this.state;
 
     return (
       <Card gtr="40px 1fr" border="1px solid #cccccc">
         <CardHeader>Assign Boxes:</CardHeader>
-        <CardBody gridgap="10px">
-          <div
-            style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gridGap: '10px'
-          }}>
-            <input
-              id="boxNumbers"
-              placeholder="Box #"
-              type="number"
-              defaultValue={box}
-              onChange={e => this.handleChange(e, 'box')}/>
-            <input
-              id="initials"
-              placeholder="Initials"
-              type="text"
-              defaultValue={initials}
-              onChange={e => this.handleChange(e, 'initials')}/>
-
-          </div>
-          <button onClick={() => handleDataInput({box, initials})}>Submit</button>
-        </CardBody>
+        {filledBoxes < 100
+          ? (
+            <CardBody gridgap="10px">
+              <div
+                style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gridGap: '10px'
+              }}>
+                <input
+                  id="boxNumbers"
+                  placeholder="Box #s"
+                  type="number"
+                  min="1"
+                  max="100"
+                  defaultValue={box}
+                  onChange={e => this.handleChange(e, 'box')}/>
+                <input
+                  id="initials"
+                  placeholder="Initials"
+                  type="text"
+                  defaultValue={initials}
+                  onChange={e => this.handleChange(e, 'initials')}/>
+              </div>
+              <button onClick={() => handleDataInput({box, initials})}>Submit</button>
+            </CardBody>
+          )
+          : (
+            <CardBody>
+              <button>Assign Random Numbers</button>
+            </CardBody>
+          )}
       </Card>
     )
   }

@@ -10,6 +10,7 @@ import Payout from './components/Payout';
 class App extends Component {
   state = {
     gameData: {},
+    filledBoxCount: 0,
     boxes: [
       {
         initials: ""
@@ -232,7 +233,10 @@ class App extends Component {
     let newBoxes = boxes;
     const index = data.box - 1; // -1 to reset the box number to the index of the array
     newBoxes[index].initials = data.initials;
-    this.setState({boxes: newBoxes});
+    this.setState({
+      boxes: newBoxes,
+      filledBoxCount: this.state.filledBoxCount + 1
+    });
   }
 
   render() {
@@ -240,7 +244,7 @@ class App extends Component {
       border: '1px solid #ccc'
     };
 
-    const {gameData, boxes} = this.state;
+    const {gameData, boxes, filledBoxCount} = this.state;
 
     return (
       <ThemeProvider theme={theme}>
@@ -266,7 +270,9 @@ class App extends Component {
                 <Payout/>
 
               </div>
-              <DataContainer handleDataInput={this.handleDataInput}/>
+              <DataContainer
+                handleDataInput={this.handleDataInput}
+                filledBoxes={filledBoxCount}/>
             </div>
             <GridContainer boxes={boxes} gameData={gameData}/>
           </div>

@@ -63,7 +63,11 @@ export default class GridContainer extends Component {
 										</div>
 										<Card border='' gtc="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ">
 												{boxes.map((box, index) => (
-														<GridItem border="1px solid #0a244d" key={index}>
+														<GridItem
+																border={!box.initials
+																? "1px solid red"
+																: "1px solid #0a244d"}
+																key={index}>
 																<Initials>{box.initials}</Initials>
 														</GridItem>
 												))}
