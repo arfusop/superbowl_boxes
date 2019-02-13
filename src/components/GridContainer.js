@@ -51,7 +51,9 @@ export default class GridContainer extends Component {
 								<div
 										style={{
 										display: 'grid',
-										gridTemplateRows: '40px 1fr'
+										gridTemplateRows: '40px 1fr',
+										borderRight: '5px solid #6d757d',
+										borderTopRightRadius: '3px'
 								}}>
 										<div
 												style={{
