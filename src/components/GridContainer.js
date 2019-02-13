@@ -64,7 +64,7 @@ export default class GridContainer extends Component {
 										}}>
 												LOS ANGELES RAMS
 										</div>
-										<Card border='' gtc="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ">
+										<Card className="boxGrid">
 												{boxes.map((box, index) => (
 														<GridItem key={index}>
 																<Initials
