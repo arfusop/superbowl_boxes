@@ -28,6 +28,10 @@ html {
 	min-width: 50%;
 }
 
+.inputs::placeholder {
+	color: #fff;
+}
+
 .submitBtn {
 	border: 1px solid #ff6e00;
 	background-color: #ff9e4a;
@@ -44,6 +48,13 @@ html {
 .submitBtn:hover {
 	color: #ff9e4a;
 	background-color: #fff;
+}
+
+.submitBtn:disabled {
+	cursor: not-allowed;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: grey;
+	border-color: rgba(0, 0, 0, 0.5);
 }
 
 .contentContainer {
@@ -69,4 +80,9 @@ html {
 	.pageTitle {
 		font-size: 20px;
 	}
+}
+
+.boxNumbers {
+	color: white;
+	background-color: tomato;
 }
