@@ -50,7 +50,9 @@ export default class DataContainer extends Component {
                   defaultValue={initials}
                   onChange={e => this.handleChange(e, 'initials')}/>
               </div>
-              <button onClick={() => handleDataInput({box, initials})}>Submit</button>
+              <button className="submitBtn" onClick={() => handleDataInput({box, initials})}>Submit&nbsp;&nbsp;
+                <i class="fas fa-check-circle"></i>
+              </button>
             </CardBody>
           )
           : (

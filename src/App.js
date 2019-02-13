@@ -253,12 +253,7 @@ class App extends Component {
           fontFamily: 'Poppins, sans-serif'
         }}>
           <Header/>
-          <div
-            style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 3fr',
-            gridGap: '20px'
-          }}>
+          <div className="contentContainer">
             <div
               style={{
               display: 'grid',
@@ -271,7 +266,6 @@ class App extends Component {
                 gridGap: 10
               }}>
                 <Payout/>
-
               </div>
               <DataContainer
                 handleDataInput={this.handleDataInput}
