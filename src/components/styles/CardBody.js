@@ -7,6 +7,8 @@ const CardBody = styled.div `
   border-bottom: 1px solid #cccccc;
   justify-content: center;
   grid-gap: ${props => props.gridgap};
+  background-color: ${props => props.bgColor};
+  color: ${props => props.color};
 `;
 
 export default CardBody;

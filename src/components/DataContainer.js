@@ -23,10 +23,10 @@ export default class DataContainer extends Component {
 
     return (
       <Card gtr="40px 1fr" border="1px solid #cccccc">
-        <CardHeader>Assign Boxes:</CardHeader>
+        <CardHeader color="#fff" bgColor="#6d757d">Assign Boxes:</CardHeader>
         {filledBoxes < 100
           ? (
-            <CardBody gridgap="10px">
+            <CardBody bgColor="#5a8ae6" color="#fff" gridgap="10px">
               <div
                 style={{
                 display: 'grid',
@@ -35,6 +35,7 @@ export default class DataContainer extends Component {
               }}>
                 <input
                   id="boxNumbers"
+                  className="inputs boxesInput"
                   placeholder="Box #s"
                   type="number"
                   min="1"
@@ -43,6 +44,7 @@ export default class DataContainer extends Component {
                   onChange={e => this.handleChange(e, 'box')}/>
                 <input
                   id="initials"
+                  className="inputs initialsInput"
                   placeholder="Initials"
                   type="text"
                   defaultValue={initials}

@@ -3,9 +3,8 @@ import {ThemeProvider} from 'emotion-theming';
 import Header from './components/Header';
 import GridContainer from './components/GridContainer';
 import DataContainer from './components/DataContainer';
-import Card from './components/styles/Card';
 import Payout from './components/Payout';
-// import {getGameData} from './api';
+import "./App.css";
 
 class App extends Component {
   state = {
@@ -248,7 +247,11 @@ class App extends Component {
 
     return (
       <ThemeProvider theme={theme}>
-        <div className="App">
+        <div
+          className="App"
+          style={{
+          fontFamily: 'Poppins, sans-serif'
+        }}>
           <Header/>
           <div
             style={{

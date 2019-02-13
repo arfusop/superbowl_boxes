@@ -2,3 +2,27 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+
+/* body {
+	font-family: "Poppins", sans-serif;
+} */
+html {
+	height: 100%;
+	width: 100%;
+	background-color: #000000;
+	color: white;
+}
+
+.pageTitle {
+	font-size: 30px;
+	text-align: center;
+	color: #ffe053;
+}
+
+.inputs {
+	border: 1px solid #ff6f01;
+	background-color: #ff9e53;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+}

@@ -7,7 +7,7 @@ import Initials from "./styles/Initials";
 export default class GridContainer extends Component {
 		render() {
 				const {gameData, boxes} = this.props;
-				let pats = 'New England Patriots';
+				let pats = 'NEW ENGLAND PATRIOTS';
 				pats = pats.replace(/ /g, '');
 				let split = pats.split('');
 				return (
@@ -15,7 +15,7 @@ export default class GridContainer extends Component {
 								style={{
 								display: 'grid',
 								gridTemplateColumns: '40px 1fr',
-								boxShadow: '0 8px 6px -6px black'
+								boxShadow: '0 8px 6px -6px #FFE053'
 						}}>
 								<div
 										style={{
@@ -24,16 +24,18 @@ export default class GridContainer extends Component {
 								}}>
 										<div
 												style={{
-												backgroundColor: '#0a244d',
+												backgroundColor: '#6E767D',
 												borderTopLeftRadius: '5px'
 										}}></div>
 										<div
 												style={{
-												backgroundColor: '#0a244d',
+												backgroundColor: '#6E767D',
 												color: '#fff',
 												display: 'grid',
 												justifyContent: 'center',
-												alignItems: 'center'
+												alignItems: 'center',
+												textAlign: 'center',
+												fontSize: 18
 										}}>
 												<div>
 														{split.map((el, index) => (
@@ -53,22 +55,25 @@ export default class GridContainer extends Component {
 								}}>
 										<div
 												style={{
-												backgroundColor: '#0a244d',
+												backgroundColor: '#6E767D',
 												color: '#fff',
 												display: 'grid',
 												justifyContent: 'center',
-												alignItems: 'center'
+												alignItems: 'center',
+												fontSize: 18
 										}}>
-												Los Angeles Rams
+												LOS ANGELES RAMS
 										</div>
 										<Card border='' gtc="1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ">
 												{boxes.map((box, index) => (
-														<GridItem
-																border={!box.initials
-																? "1px solid red"
-																: "1px solid #0a244d"}
-																key={index}>
-																<Initials>{box.initials}</Initials>
+														<GridItem key={index}>
+																<Initials
+																		border={box.initials
+																		? "1px solid #FFE053"
+																		: "1px solid #6E767D"}
+																		backgroundColor={box.initials
+																		? "#5a8ae6"
+																		: "#fff"}>{box.initials}</Initials>
 														</GridItem>
 												))}
 										</Card>

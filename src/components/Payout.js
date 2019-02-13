@@ -16,8 +16,8 @@ export default class Payout extends Component {
     const {q1, q2, q3, q4, total} = this.state;
     return (
       <Card gtr="40px 1fr" border="1px solid #cccccc">
-        <CardHeader>Payouts</CardHeader>
-        <CardBody>
+        <CardHeader color="#fff" bgColor="#6d757d">Payouts</CardHeader>
+        <CardBody bgColor="#5a8ae6" color="#fff">
           <div>1st Quarter: ${q1}</div>
           <div>2nd Quarter: ${q2}</div>
           <div>3rd Quarter: ${q3}</div>
