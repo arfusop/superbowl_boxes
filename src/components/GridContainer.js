@@ -20,7 +20,7 @@ export default class GridContainer extends Component {
 								<div
 										style={{
 										display: 'grid',
-										gridTemplateRows: '.5fr 12fr'
+										gridTemplateRows: '.5fr 9fr'
 								}}>
 										<div
 												style={{
@@ -53,6 +53,7 @@ export default class GridContainer extends Component {
 										display: 'grid',
 										gridTemplateRows: '40px 1fr',
 										borderRight: '5px solid #6d757d',
+										borderBottom: '5px solid #6d757d',
 										borderTopRightRadius: '3px'
 								}}>
 										<div
@@ -66,7 +67,7 @@ export default class GridContainer extends Component {
 										}}>
 												LOS ANGELES RAMS
 										</div>
-										<Card className="boxGrid">
+										<Card className="boxGrid" boxShadow="">
 												{boxes.map((box, index) => (
 														<GridItem key={index}>
 																<Initials

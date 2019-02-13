@@ -22,7 +22,10 @@ export default class DataContainer extends Component {
     const {box, initials} = this.state;
 
     return (
-      <Card gtr="40px 1fr" border="1px solid #cccccc">
+      <Card
+        gtr="40px 1fr"
+        border="1px solid #cccccc"
+        boxShadow="0 8px 6px -6px #FFE053">
         <CardHeader color="#fff" bgColor="#6d757d">Assign Boxes:</CardHeader>
         {filledBoxes < 100
           ? (
