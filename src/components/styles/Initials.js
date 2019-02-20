@@ -6,7 +6,8 @@ const Initials = styled.div `
 	justify-content: center;
   align-items: center;
   border: ${props => props.border};
-	background-color: ${props => props.backgroundColor};
+  background-color: ${props => props.backgroundColor};
+  text-align: center;
 `;
 
 export default Initials;
