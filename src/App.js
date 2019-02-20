@@ -238,6 +238,18 @@ class App extends Component {
     });
   }
 
+  randomAssignNames = () => {
+    const {boxes} = this.state;
+    const letters = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const newBoxes = [];
+    boxes.forEach((box, index) => {
+      const first = letters[Math.floor(Math.random() * letters.length)];
+      const second = letters[Math.floor(Math.random() * letters.length)];
+      newBoxes.push({initials: `${first}${second}`})
+    });
+    this.setState({boxes: newBoxes, filledBoxCount: 100})
+  };
+
   render() {
     const theme = {
       border: '1px solid #ccc'
@@ -272,6 +284,7 @@ class App extends Component {
                 filledBoxes={filledBoxCount}/>
             </div>
             <GridContainer boxes={boxes} gameData={gameData}/>
+            <button className="rando" onClick={this.randomAssignNames}>Random Assign Initials</button>
           </div>
         </div>
       </ThemeProvider>

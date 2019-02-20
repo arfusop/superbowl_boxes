@@ -78,15 +78,13 @@ export default class GridContainer extends Component {
 																		? "#5a8ae6"
 																		: "#fff"}>
 																		<div
-																				className="boxNumbers"
 																				style={{
-																				border: box.initials
-																						? "1px solid #ffe053"
-																						: "1px solid #6e767d",
 																				backgroundColor: box.initials
-																						? "#5a8ae6"
-																						: "#fff"
-																		}}>{index}</div>{box.initials}</Initials>
+																						? ''
+																						: '#fff',
+																				color: 'tomato',
+																				textAlign: 'center'
+																		}}>{index + 1}</div>{box.initials}</Initials>
 														</GridItem>
 
 												))}

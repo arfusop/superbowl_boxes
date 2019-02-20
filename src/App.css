@@ -82,7 +82,23 @@ html {
 	}
 }
 
-.boxNumbers {
-	color: white;
-	background-color: tomato;
+.rando {
+	background-color: #ff9e4a;
+	border: 1px solid #5887e9;
+	height: 30px;
+	border-radius: 4px;
+	color: #5887e9;
+	font-weight: bold;
+	font-size: 15px;
 }
+
+.rando:hover {
+	background-color: #5887e9;
+	border: 1px solid #ff9e4a;
+	color: #ff9e4a;
+}
+
+/* .boxNumbers {
+	color: tomato;
+	background-color: white;
+} */

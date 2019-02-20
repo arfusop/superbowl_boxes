@@ -58,10 +58,10 @@ export default class DataContainer extends Component {
                 className="submitBtn"
                 onClick={() => handleDataInput({box, initials})}>Submit&nbsp;&nbsp; {box == null || initials == null
                   ? (
-                    <i class="fas fa-ban"></i>
+                    <i className="fas fa-ban"></i>
                   )
                   : (
-                    <i class="fas fa-check-circle"></i>
+                    <i className="fas fa-check-circle"></i>
                   )}
               </button>
             </CardBody>
