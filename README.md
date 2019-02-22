@@ -11,7 +11,7 @@
 - [ ] Stop e from being allowed as input for box # input
 - [ ] Enforce input validations on mobile (iphone)
 - [x] Style the submit when disabled
-- [ ] Add a number identifier to each box
+- [x] Add a number identifier to each box
 - [x] Change input placeholder text color
 - [ ] Space out new england pats better
 - [ ] Try to allow for multiple box numbers to input at a time if needed

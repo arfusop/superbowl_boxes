@@ -18,7 +18,7 @@ export default class DataContainer extends Component {
   }
 
   render() {
-    const {filledBoxes, handleDataInput} = this.props;
+    const {assignScoreNumbers, filledBoxes, handleDataInput} = this.props;
     const {box, initials} = this.state;
 
     return (
@@ -68,7 +68,7 @@ export default class DataContainer extends Component {
           )
           : (
             <CardBody>
-              <button>Assign Random Numbers</button>
+              <button className="numberAssign" onClick={assignScoreNumbers}>Assign Random Numbers</button>
             </CardBody>
           )}
       </Card>

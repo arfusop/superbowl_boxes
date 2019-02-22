@@ -1,3 +1,10 @@
+.App {
+	font-family: Poppins, sans-serif;
+	display: grid;
+	grid-template-rows: 1fr 5fr 1fr;
+	align-items: center;
+}
+
 .boxGridContainer {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -83,9 +90,10 @@ html {
 }
 
 .rando {
-	background-color: #ff9e4a;
+	width: 100%;
+	height: 50px;
+	background-color: #000;
 	border: 1px solid #5887e9;
-	height: 30px;
 	border-radius: 4px;
 	color: #5887e9;
 	font-weight: bold;
@@ -93,12 +101,20 @@ html {
 }
 
 .rando:hover {
-	background-color: #5887e9;
 	border: 1px solid #ff9e4a;
 	color: #ff9e4a;
 }
 
-/* .boxNumbers {
-	color: tomato;
-	background-color: white;
-} */
+.numberAssign {
+	border: 2px solid #5887e9;
+	border-radius: 3px;
+	font-size: 20px;
+	word-break: break-all;
+	background-color: #000;
+	color: #5887e9;
+}
+
+.numberAssign:hover {
+	border-color: #ff9e4a;
+	color: #ff9e4a;
+}

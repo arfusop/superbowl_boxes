@@ -10,6 +10,7 @@ class App extends Component {
   state = {
     gameData: {},
     filledBoxCount: 0,
+    scoreNumbers: [],
     boxes: [
       {
         initials: ""
@@ -250,20 +251,57 @@ class App extends Component {
     this.setState({boxes: newBoxes, filledBoxCount: 100})
   };
 
+  randomizeArray() {
+    let scores = [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ];
+
+    let currentIndex = scores.length;
+    let temporaryValue,
+      randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = scores[currentIndex];
+      scores[currentIndex] = scores[randomIndex];
+      scores[randomIndex] = temporaryValue;
+    }
+    return scores;
+  }
+
+  assignScoreNumbers = () => {
+    const homeScores = this.randomizeArray();
+    const awayScores = this.randomizeArray();
+
+    this.setState({
+      scoreNumbers: [homeScores, awayScores]
+    })
+  }
+
   render() {
     const theme = {
       border: '1px solid #ccc'
     };
 
-    const {gameData, boxes, filledBoxCount} = this.state;
+    const {gameData, boxes, filledBoxCount, scoreNumbers} = this.state;
 
     return (
       <ThemeProvider theme={theme}>
-        <div
-          className="App"
-          style={{
-          fontFamily: 'Poppins, sans-serif'
-        }}>
+        <div className="App">
           <Header/>
           <div className="contentContainer">
             <div
@@ -280,12 +318,13 @@ class App extends Component {
                 <Payout/>
               </div>
               <DataContainer
+                assignScoreNumbers={this.assignScoreNumbers}
                 handleDataInput={this.handleDataInput}
                 filledBoxes={filledBoxCount}/>
             </div>
-            <GridContainer boxes={boxes} gameData={gameData}/>
-            <button className="rando" onClick={this.randomAssignNames}>Random Assign Initials</button>
+            <GridContainer scoreNumbers={scoreNumbers} boxes={boxes} gameData={gameData}/>
           </div>
+          <button className="rando" onClick={this.randomAssignNames}>Random Assign Initials</button>
         </div>
       </ThemeProvider>
     );
