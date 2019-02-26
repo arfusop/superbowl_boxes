@@ -9,6 +9,7 @@ const CardBody = styled.div `
   grid-gap: ${props => props.gridgap};
   background-color: ${props => props.bgColor};
   color: ${props => props.color};
+  grid-template-columns: ${props => props.gtr};
 `;
 
 export default CardBody;

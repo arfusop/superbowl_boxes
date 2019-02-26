@@ -50,7 +50,9 @@ export default class GridContainer extends Component {
 																						: '#fff',
 																				color: 'tomato',
 																				textAlign: 'center'
-																		}}>{index + 1}</div>{box.initials}</Initials>
+																		}}>{scoreNumbers.length
+																						? `${scoreNumbers[index][0]} - ${scoreNumbers[index][1]}`
+																						: index + 1}</div>{box.initials}</Initials>
 														</GridItem>
 
 												))}

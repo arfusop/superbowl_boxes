@@ -8,6 +8,7 @@ import "./App.css";
 
 class App extends Component {
   state = {
+    allowReset: false,
     gameData: {},
     filledBoxCount: 0,
     scoreNumbers: [],
@@ -287,9 +288,16 @@ class App extends Component {
     const homeScores = this.randomizeArray();
     const awayScores = this.randomizeArray();
 
-    this.setState({
-      scoreNumbers: [homeScores, awayScores]
-    })
+    // for each home scores nested for each for each away score each nested loop
+    // should return 1 full row of scores (1-10)
+    let newScores = [];
+    homeScores.forEach(home => {
+      awayScores.forEach(away => {
+        newScores.push([home, away])
+      });
+    });
+
+    this.setState({scoreNumbers: newScores, allowReset: true})
   }
 
   render() {
@@ -297,7 +305,7 @@ class App extends Component {
       border: '1px solid #ccc'
     };
 
-    const {gameData, boxes, filledBoxCount, scoreNumbers} = this.state;
+    const {gameData, boxes, filledBoxCount, scoreNumbers, allowReset} = this.state;
 
     return (
       <ThemeProvider theme={theme}>
@@ -318,6 +326,7 @@ class App extends Component {
                 <Payout/>
               </div>
               <DataContainer
+                allowReset={allowReset}
                 assignScoreNumbers={this.assignScoreNumbers}
                 handleDataInput={this.handleDataInput}
                 filledBoxes={filledBoxCount}/>
@@ -330,7 +339,5 @@ class App extends Component {
     );
   }
 }
-
-// <Card border="1px solid #cccccc">Submit and assign #'s</Card>
 
 export default App;

@@ -118,3 +118,37 @@ html {
 	border-color: #ff9e4a;
 	color: #ff9e4a;
 }
+
+.shareContainer {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.shareBtns {
+	height: 80%;
+	width: 30%;
+	margin: 5px;
+	font-size: 35px;
+	background-color: transparent;
+	border: 2px solid #5887e9;
+	border-radius: 5px;
+	color: #5887e9;
+	cursor: pointer;
+}
+
+.shareBtns:hover {
+	border-color: #ff9e4a;
+	color: #ff9e4a;
+}
+
+.numberReset {
+}
+
+.print {
+}
+
+.email {
+}

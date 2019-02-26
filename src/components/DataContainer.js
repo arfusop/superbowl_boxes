@@ -18,7 +18,7 @@ export default class DataContainer extends Component {
   }
 
   render() {
-    const {assignScoreNumbers, filledBoxes, handleDataInput} = this.props;
+    const {allowReset, assignScoreNumbers, filledBoxes, handleDataInput} = this.props;
     const {box, initials} = this.state;
 
     return (
@@ -67,8 +67,24 @@ export default class DataContainer extends Component {
             </CardBody>
           )
           : (
-            <CardBody>
-              <button className="numberAssign" onClick={assignScoreNumbers}>Assign Random Numbers</button>
+            <CardBody gtr="1fr">
+              {allowReset
+                ? (
+                  <div className="shareContainer">
+                    <button className="shareBtns numberReset">
+                      <i className="fas fa-trash-alt"></i>
+                    </button>
+                    <button onClick={window.print()} className="shareBtns print">
+                      <i className="fas fa-print"></i>
+                    </button>
+                    <button className="shareBtns email">
+                      <i className="fas fa-envelope"></i>
+                    </button>
+                  </div>
+                )
+                : (
+                  <button className="numberAssign" onClick={assignScoreNumbers}>Assign Random Numbers</button>
+                )}
             </CardBody>
           )}
       </Card>
