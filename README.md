@@ -13,8 +13,8 @@
 - [x] Style the submit when disabled
 - [x] Add a number identifier to each box
 - [x] Change input placeholder text color
-- [ ] Space out new england pats better
 - [ ] Try to allow for multiple box numbers to input at a time if needed
 - [ ] Add section to display scores per quarter
-- [ ] Add print button
+- [x] Add print button
 - [ ] Add email button
+- [ ] Allow for price payouts to be editable inputs

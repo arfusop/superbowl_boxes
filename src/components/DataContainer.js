@@ -18,7 +18,7 @@ export default class DataContainer extends Component {
   }
 
   render() {
-    const {allowReset, assignScoreNumbers, filledBoxes, handleDataInput} = this.props;
+    const {allowReset, assignScoreNumbers, filledBoxes, handleDataInput, resetNumbers} = this.props;
     const {box, initials} = this.state;
 
     return (
@@ -71,10 +71,10 @@ export default class DataContainer extends Component {
               {allowReset
                 ? (
                   <div className="shareContainer">
-                    <button className="shareBtns numberReset">
+                    <button onClick={resetNumbers} className="shareBtns numberReset">
                       <i className="fas fa-trash-alt"></i>
                     </button>
-                    <button onClick={window.print()} className="shareBtns print">
+                    <button onClick={() => window.print()} className="shareBtns print">
                       <i className="fas fa-print"></i>
                     </button>
                     <button className="shareBtns email">

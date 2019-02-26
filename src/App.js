@@ -300,6 +300,10 @@ class App extends Component {
     this.setState({scoreNumbers: newScores, allowReset: true})
   }
 
+  resetNumbers = () => {
+    this.setState({scoreNumbers: [], allowReset: false})
+  }
+
   render() {
     const theme = {
       border: '1px solid #ccc'
@@ -329,7 +333,8 @@ class App extends Component {
                 allowReset={allowReset}
                 assignScoreNumbers={this.assignScoreNumbers}
                 handleDataInput={this.handleDataInput}
-                filledBoxes={filledBoxCount}/>
+                filledBoxes={filledBoxCount}
+                resetNumbers={this.resetNumbers}/>
             </div>
             <GridContainer scoreNumbers={scoreNumbers} boxes={boxes} gameData={gameData}/>
           </div>
