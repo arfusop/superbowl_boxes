@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 const CardHeader = styled.div `
   display: grid;
-  border-bottom: 1px solid #cccccc;
+  border-bottom: 1px solid #EEF0F2;
   justify-content: center;
   align-items: center;
   border-top-right-radius: 2px;

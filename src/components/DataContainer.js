@@ -24,14 +24,14 @@ export default class DataContainer extends Component {
     return (
       <Card
         gtr="40px 1fr"
-        border="1px solid #cccccc"
+        border="1px solid #EEF0F2"
         boxShadow="0 8px 6px -6px #FFE053">
         <CardHeader color="#fff" bgColor="#6d757d">
           Assign Boxes:
         </CardHeader>
         {filledBoxes < 100
           ? (
-            <CardBody bgColor="#5a8ae6" color="#fff" gridgap="10px">
+            <CardBody bgColor="#011638" color="#fff" gridgap="10px">
               <div
                 style={{
                 display: "grid",
@@ -66,7 +66,7 @@ export default class DataContainer extends Component {
             </CardBody>
           )
           : (
-            <CardBody gtr="1fr">
+            <CardBody bgColor="#001539" gtr="1fr">
               {allowReset
                 ? (
                   <div className="shareContainer">

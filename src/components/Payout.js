@@ -17,10 +17,10 @@ export default class Payout extends Component {
     return (
       <Card
         gtr="40px 1fr"
-        border="1px solid #cccccc"
+        border="1px solid #EEF0F2"
         boxShadow="0 8px 6px -6px #FFE053">
         <CardHeader color="#fff" bgColor="#6d757d">Payouts</CardHeader>
-        <CardBody bgColor="#5a8ae6" color="#fff">
+        <CardBody bgColor="#011638" color="#fff">
           <div>1st Quarter: ${q1}</div>
           <div>2nd Quarter: ${q2}</div>
           <div>3rd Quarter: ${q3}</div>
@@ -28,7 +28,7 @@ export default class Payout extends Component {
           <div
             style={{
             width: '100%',
-            borderTop: '2px solid #cccccc'
+            borderTop: '2px solid #EEF0F2'
           }}/>
           <div>Total: ${total}</div>
         </CardBody>

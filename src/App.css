@@ -5,18 +5,21 @@
 	align-items: center;
 }
 
+@media (max-width: 750px) {
+	.App {
+		grid-template-rows: 1fr 14fr 1fr;
+	}
+}
+
 .boxGridContainer {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
-/* body {
-	font-family: "Poppins", sans-serif;
-} */
 html {
 	height: 100%;
 	width: 100%;
-	background-color: #000000;
+	background-color: #141414;
 	color: white;
 }
 
@@ -27,12 +30,13 @@ html {
 }
 
 .inputs {
-	border: 1px solid #ff6f01;
-	background-color: #ff9e53;
-	color: #fff;
+	border: 1px solid #eef0f2;
+	background-color: #0d21a1;
+	color: #eef0f2;
 	font-size: 20px;
 	text-align: center;
 	min-width: 50%;
+	border-radius: 3px;
 }
 
 .inputs::placeholder {
@@ -54,7 +58,7 @@ html {
 
 .submitBtn:hover {
 	color: #ff9e4a;
-	background-color: #fff;
+	background-color: #0d21a1;
 }
 
 .submitBtn:disabled {
@@ -92,17 +96,19 @@ html {
 .rando {
 	width: 100%;
 	height: 50px;
-	background-color: #000;
-	border: 1px solid #5887e9;
+	background-color: #141414;
+	border: 2px solid #eef0f2;
 	border-radius: 4px;
-	color: #5887e9;
+	color: #eef0f2;
 	font-weight: bold;
 	font-size: 15px;
+	cursor: pointer;
+	background-color: #011638;
 }
 
 .rando:hover {
-	border: 1px solid #ff9e4a;
-	color: #ff9e4a;
+	border: 2px solid #eec643;
+	color: #eec643;
 }
 
 .numberAssign {
@@ -111,14 +117,15 @@ html {
 	border-radius: 3px;
 	font-size: 20px;
 	word-break: break-all;
-	background-color: #000;
-	color: #5887e9;
+	background-color: #141414;
+	border: 2px solid #eef0f2;
 	padding: 10px;
+	color: #eef0f2;
 }
 
 .numberAssign:hover {
-	border-color: #ff9e4a;
-	color: #ff9e4a;
+	border: 2px solid #eec643;
+	color: #eec643;
 }
 
 .shareContainer {
@@ -135,15 +142,15 @@ html {
 	margin: 5px;
 	font-size: 35px;
 	background-color: transparent;
-	border: 2px solid #5887e9;
+	border: 2px solid #eef0f2;
 	border-radius: 5px;
-	color: #5887e9;
+	color: #eef0f2;
 	cursor: pointer;
 }
 
 .shareBtns:hover {
-	border-color: #ff9e4a;
-	color: #ff9e4a;
+	border-color: #eec643;
+	color: #eec643;
 }
 
 .numberReset {

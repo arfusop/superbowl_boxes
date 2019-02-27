@@ -42,14 +42,16 @@ export default class GridContainer extends Component {
 																				? "1px solid #FFE053"
 																				: "1px solid #6E767D"}
 																				backgroundColor={box.initials
-																				? "#5a8ae6"
-																				: "#fff"}>
+																				? "#011638"
+																				: "#EEF0F2"}>
 																				<div
 																						style={{
 																						backgroundColor: box.initials
 																								? ""
-																								: "#fff",
-																						color: "tomato",
+																								: "#EEF0F2",
+																						color: box.initials
+																								? "#EEC643"
+																								: '#141414',
 																						textAlign: "center"
 																				}}>
 																						{scoreNumbers.length
