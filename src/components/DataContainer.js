@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Card from "./styles/Card";
 import CardHeader from "./styles/CardHeader";
 import CardBody from "./styles/CardBody";
+import Modal from './Modal';
 import EmailForm from './EmailForm';
 // import emailjs from 'emailjs-com';
 
@@ -9,7 +10,7 @@ export default class DataContainer extends Component {
 		state = {
 				box: null,
 				initials: null,
-				showEmailForm: false
+				showModal: false
 		};
 
 		handleChange = (e, label) => {
@@ -52,7 +53,7 @@ export default class DataContainer extends Component {
 
 		handleEmailClick = () => {
 				console.log("show modal");
-				this.setState({showEmailForm: true});
+				this.setState({showModal: true});
 				// const email_id = 'phil_arfuso'; const template_id = 'template_rTyVoLGd';
 				// emailjs.send(email_id, template_id, )
 				// 1. take a canvas screen shot of the payouts & the box grid
@@ -61,9 +62,13 @@ export default class DataContainer extends Component {
 				// 4. modal needs a confirm send email btn
 		};
 
+		toggleModal = bool => {
+				this.setState({showModal: bool})
+		}
+
 		render() {
 				const {allowReset, assignScoreNumbers, filledBoxes, handleDataInput, resetNumbers} = this.props;
-				const {box, initials, showEmailForm} = this.state;
+				const {box, initials, showModal} = this.state;
 
 				return (
 						<React.Fragment>
@@ -132,7 +137,11 @@ export default class DataContainer extends Component {
 														</CardBody>
 												)}
 								</Card>
-								{showEmailForm && (<EmailForm/>)}
+								{showModal && (
+										<Modal toggle={this.toggleModal}>
+												<EmailForm/>
+										</Modal>
+								)}
 						</React.Fragment>
 				);
 		}
