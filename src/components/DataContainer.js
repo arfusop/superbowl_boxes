@@ -2,12 +2,14 @@ import React, {Component} from "react";
 import Card from "./styles/Card";
 import CardHeader from "./styles/CardHeader";
 import CardBody from "./styles/CardBody";
+import EmailForm from './EmailForm';
+// import emailjs from 'emailjs-com';
 
 export default class DataContainer extends Component {
 		state = {
 				box: null,
 				initials: null,
-				showModal: false
+				showEmailForm: false
 		};
 
 		handleChange = (e, label) => {
@@ -50,6 +52,9 @@ export default class DataContainer extends Component {
 
 		handleEmailClick = () => {
 				console.log("show modal");
+				this.setState({showEmailForm: true});
+				// const email_id = 'phil_arfuso'; const template_id = 'template_rTyVoLGd';
+				// emailjs.send(email_id, template_id, )
 				// 1. take a canvas screen shot of the payouts & the box grid
 				// 2. open modal
 				// 3. append the canvas images to the modal
@@ -58,74 +63,77 @@ export default class DataContainer extends Component {
 
 		render() {
 				const {allowReset, assignScoreNumbers, filledBoxes, handleDataInput, resetNumbers} = this.props;
-				const {box, initials} = this.state;
+				const {box, initials, showEmailForm} = this.state;
 
 				return (
-						<Card
-								gtr="40px 1fr"
-								border="1px solid #EEF0F2"
-								boxShadow="0 8px 6px -6px #FFE053">
-								<CardHeader color="#fff" bgColor="#6d757d">
-										Assign Boxes:
-								</CardHeader>
-								{filledBoxes < 100
-										? (
-												<CardBody bgColor="#011638" color="#fff" gridgap="10px">
-														<div
-																style={{
-																display: "grid",
-																gridTemplateColumns: "1fr 1fr",
-																gridGap: "10px"
-														}}>
-																<input
-																		id="boxNumbers"
-																		className="inputs boxesInput"
-																		placeholder="Box #s"
-																		type="string"
-																		defaultValue={box}
-																		onChange={e => this.handleChange(e, "box")}/>
-																<input
-																		id="initials"
-																		className="inputs initialsInput"
-																		placeholder="Initials"
-																		type="text"
-																		defaultValue={initials}
-																		onChange={e => this.handleChange(e, "initials")}/>
-														</div>
-														<button
-																disabled={box == null || initials == null}
-																className="submitBtn"
-																onClick={() => handleDataInput({box, initials})}>
-																Submit&nbsp;&nbsp;{" "} {box == null || initials == null
-																		? (<i className="fas fa-ban"/>)
-																		: (<i className="fas fa-check-circle"/>)}
-														</button>
-												</CardBody>
-										)
-										: (
-												<CardBody bgColor="#001539" gtr="1fr">
-														{allowReset
-																? (
-																		<div className="shareContainer">
-																				<button onClick={resetNumbers} className="shareBtns">
-																						<i className="fas fa-trash-alt"/>
+						<React.Fragment>
+								<Card
+										gtr="40px 1fr"
+										border="1px solid #EEF0F2"
+										boxShadow="0 8px 6px -6px #FFE053">
+										<CardHeader color="#fff" bgColor="#6d757d">
+												Assign Boxes:
+										</CardHeader>
+										{filledBoxes < 100
+												? (
+														<CardBody bgColor="#011638" color="#fff" gridgap="10px">
+																<div
+																		style={{
+																		display: "grid",
+																		gridTemplateColumns: "1fr 1fr",
+																		gridGap: "10px"
+																}}>
+																		<input
+																				id="boxNumbers"
+																				className="inputs boxesInput"
+																				placeholder="Box #s"
+																				type="string"
+																				defaultValue={box}
+																				onChange={e => this.handleChange(e, "box")}/>
+																		<input
+																				id="initials"
+																				className="inputs initialsInput"
+																				placeholder="Initials"
+																				type="text"
+																				defaultValue={initials}
+																				onChange={e => this.handleChange(e, "initials")}/>
+																</div>
+																<button
+																		disabled={box == null || initials == null}
+																		className="submitBtn"
+																		onClick={() => handleDataInput({box, initials})}>
+																		Submit&nbsp;&nbsp;{" "} {box == null || initials == null
+																				? (<i className="fas fa-ban"/>)
+																				: (<i className="fas fa-check-circle"/>)}
+																</button>
+														</CardBody>
+												)
+												: (
+														<CardBody bgColor="#001539" gtr="1fr">
+																{allowReset
+																		? (
+																				<div className="shareContainer">
+																						<button onClick={resetNumbers} className="shareBtns">
+																								<i className="fas fa-trash-alt"/>
+																						</button>
+																						<button onClick={this.handleEmailClick} className="shareBtns">
+																								<i className="fas fa-envelope"/>
+																						</button>
+																						<button onClick={() => window.print()} className="shareBtns">
+																								<i className="fas fa-print"/>
+																						</button>
+																				</div>
+																		)
+																		: (
+																				<button className="numberAssign" onClick={assignScoreNumbers}>
+																						Assign Scores
 																				</button>
-																				<button className="shareBtns">
-																						<i className="fas fa-envelope"/>
-																				</button>
-																				<button onClick={() => window.print()} className="shareBtns">
-																						<i className="fas fa-print"/>
-																				</button>
-																		</div>
-																)
-																: (
-																		<button className="numberAssign" onClick={assignScoreNumbers}>
-																				Assign Scores
-																		</button>
-																)}
-												</CardBody>
-										)}
-						</Card>
+																		)}
+														</CardBody>
+												)}
+								</Card>
+								{showEmailForm && (<EmailForm/>)}
+						</React.Fragment>
 				);
 		}
 }
