@@ -207,3 +207,28 @@ html {
 	border: 1px solid #888;
 	width: 80%; /* Could be more or less, depending on screen size */
 }
+
+.modalHeader {
+	display: flex;
+	color: black;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.modalBody {
+	padding-top: 10px;
+}
+
+.emailForm {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+}
+
+.emailInput {
+	height: 25px;
+	margin: 5px 0;
+	padding: 5px;
+}

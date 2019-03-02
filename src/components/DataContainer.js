@@ -13,6 +13,25 @@ export default class DataContainer extends Component {
 				showModal: false
 		};
 
+		componentDidUpdate(prevState) {
+				const {showModal} = this.state;
+				if (prevState.showModal !== showModal && showModal) {
+						// Click listener to close modal whenever clicking outside of modal content
+						document.addEventListener('click', e => {
+								if (e.target.className == 'modal') {
+										this.setState({showModal: false})
+								}
+						})
+
+						// Keyboard listener to close modal whenever escape key is clicked
+						document.onkeydown = e => {
+								if (e.keyCode == 27) {
+										this.setState({showModal: false})
+								}
+						}
+				}
+		}
+
 		handleChange = (e, label) => {
 				// allow for ints ONLY
 				const {value} = e.target;
@@ -52,7 +71,6 @@ export default class DataContainer extends Component {
 		};
 
 		handleEmailClick = () => {
-				console.log("show modal");
 				this.setState({showModal: true});
 				// const email_id = 'phil_arfuso'; const template_id = 'template_rTyVoLGd';
 				// emailjs.send(email_id, template_id, )
@@ -138,7 +156,7 @@ export default class DataContainer extends Component {
 												)}
 								</Card>
 								{showModal && (
-										<Modal toggle={this.toggleModal}>
+										<Modal headerMsg="Send Email" toggle={this.toggleModal}>
 												<EmailForm/>
 										</Modal>
 								)}
