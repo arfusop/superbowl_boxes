@@ -150,6 +150,9 @@ html {
 	border-radius: 5px;
 	color: #eef0f2;
 	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .shareBtns:hover {

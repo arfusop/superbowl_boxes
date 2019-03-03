@@ -29,6 +29,11 @@ export default class DataContainer extends Component {
 										this.setState({showModal: false})
 								}
 						}
+
+						// touch listener
+						document.addEventListener('touchstart', e => {
+								console.log(e);
+						})
 				}
 		}
 
