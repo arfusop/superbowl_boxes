@@ -8,7 +8,7 @@ export default class Modal extends Component {
         <div className="modalContent">
           <div className="modalHeader">
             <span>{headerMsg}</span>
-            <button onClick={() => toggle(false)}>
+            <button className="closeBtn" onClick={() => toggle(false)}>
               <i className="fas fa-times"></i>
             </button>
           </div>

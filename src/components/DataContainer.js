@@ -19,20 +19,22 @@ export default class DataContainer extends Component {
 						// Click listener to close modal whenever clicking outside of modal content
 						document.addEventListener('click', e => {
 								if (e.target.className == 'modal') {
-										this.setState({showModal: false})
+										this.toggleModal(false);
 								}
 						})
 
 						// Keyboard listener to close modal whenever escape key is clicked
 						document.onkeydown = e => {
 								if (e.keyCode == 27) {
-										this.setState({showModal: false})
+										this.toggleModal(false);
 								}
 						}
 
 						// touch listener
 						document.addEventListener('touchstart', e => {
-								console.log(e);
+								if (e.target.className == 'modal') {
+										this.toggleModal(false);
+								}
 						})
 				}
 		}
@@ -161,7 +163,7 @@ export default class DataContainer extends Component {
 												)}
 								</Card>
 								{showModal && (
-										<Modal headerMsg="Send Email" toggle={this.toggleModal}>
+										<Modal className="fadeIn" headerMsg="Send Email" toggle={this.toggleModal}>
 												<EmailForm/>
 										</Modal>
 								)}
