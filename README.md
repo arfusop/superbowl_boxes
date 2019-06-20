@@ -1,7 +1,21 @@
-#Super Bowl Boxes
-[Click here to see](https://superbowl-box-generator.herokuapp.com/)
+# Game Day Boxes
 
-## To Do:
+Front end application that allows the user to assign initials to all 100 boxes, then randomly assign scores to each box at the touch of a button. User can then print the results.
+
+## Getting Started
+
+To get started, clone this repo down. Then run yarn add/npm install to install all of the dependencies. Then you can run yarn start/npm run start to see the app run in development.
+
+## Deployment
+
+I am using netlify to deploy this site. When you think you're done and ready to push live, run yarn build. Let the build process finish up, then push all of your changes up to your remote git master. Ensure that your local build/dist file has been updated. Confirm your connection to netlify or whoever you are using to deploy is up and running, and the deployment should begin once remote git master gets the changes.
+
+## Built With
+
+- [Create-react-app](https://github.com/facebook/create-react-app) - The web framework used
+- [Emotion Styled Components](https://emotion.sh/docs/introduction) - Styled components library
+
+## Remaining To Do:
 
 - [ ] Limit initials input to be 2 letters only
 - [ ] Limit box input to be min 0 and max 100
@@ -18,3 +32,13 @@
 - [x] Add print button
 - [ ] Add email button
 - [ ] Allow for price payouts to be editable inputs
+
+## Authors
+
+- **Phil Arfuso**
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
